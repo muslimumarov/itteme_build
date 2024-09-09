@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Custom styles for nav-item */
+
+@layer utilities {
+  .all-page::before,
+  .home-video {
+    height: 100%;
+    left: 0;
+    /*right: 400px;*/
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+  }
+}
+.home-video {
+  object-fit: cover;
+  filter: brightness(65%) contrast(100%);
+}
+
+/* Markazlashtirish va bo'shliqni yo'qotish uchun */
+@media (max-width: 300px) {
+  .home-video {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw; /* Rasmning to'liq ekran kengligida bo'lishi */
+    height: 100vh; /* Rasmning to'liq ekran balandligida bo'lishi */
+  }
+}
+
+img {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@layer components {
+  .nav-item {
+    @apply relative pb-1 text-gray-50 font-medium transition-all duration-300 ease-linear;
+  }
+  .nav-item::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 right-0 h-0.5 bg-gray-50 transition-all duration-200 ease-linear;
+    margin: 0 auto;
+  }
+  .nav-item:hover::after {
+    @apply w-full left-0 right-0;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /*-webkit-touch-callout: none; !* iOS-da kontekst menyusini bloklash *!*/
+  /*-webkit-user-select: none; !* Matnni belgilashni to'xtatadi *!*/
+  /*-moz-user-select: none; !* Firefox *!*/
+  /*-ms-user-select: none; !* IE/Edge *!*/
+  /*user-select: none; !* Standart *!*/
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/*.origin-top-right  {*/
+/*  max-width: 75px !important;*/
+/*  background-color: red;*/
+/*}*/
+@media (max-width: 940px) {
+  .header-wrap {
+    font-size: 9px;
+  }
+}
+@media (max-width: 1536px) {
+  .nav-item   {
+    color: white !important;
+  }
+}
+@media (max-width: 768px) {
+  .nav-item   {
+    color: black !important;
+  }
+}
