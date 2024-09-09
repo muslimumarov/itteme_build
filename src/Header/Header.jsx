@@ -96,6 +96,7 @@ function Header() {
             {/* Mobile Menu */}
             {isOpen && (<div className="md:hidden  relative  top-[-100px] z-50">
                 <div
+
                     className="pl-[50px] pt-[50px] rounded-[19px] bg-Custo
                     text-[20px] absolute  top-[35px] h-screen left-[-40px] w-[280px]   space-y-5 ">
                     <button onClick={toggleMenu}>
